@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -29,15 +30,10 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8 lg:px-12">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#efe2dc] bg-[#fff4f2] text-lg font-semibold tracking-[0.2em] text-[#c20b0b]">
-            MC
+          <div className="relative h-16 w-auto shrink-0">
+            <Image src="/images/mad-compass-logo.png" alt="Mad Compass" width={200} height={100} className="h-16 w-auto object-contain" />
           </div>
-          <div className="flex min-w-0 flex-col leading-tight">
-            <span className="text-base font-semibold text-[#111111]">{siteContent.brandName}</span>
-            <span className="truncate text-[11px] uppercase tracking-[0.28em] text-[#c20b0b]">
-              Here to take you places!
-            </span>
-          </div>
+          {/* Logo image only: text removed */}
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">

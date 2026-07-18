@@ -17,14 +17,39 @@ const highlights = [
 ];
 
 const journeys = [
-  { title: "Japan soft luxury discovery", subtitle: "Kyoto, Kanazawa, and Tokyo with a calm rhythm", description: "A polished overseas journey that balances food, culture, and restful mornings.", badge: "Japan", image: "/images/Japan-soft-luxury-discovery.jpg", href: "/contact" },
-  { title: "Bhutan cultural passage", subtitle: "Monasteries, mountain air, and open landscapes", description: "A thoughtful choice for travellers who want depth and ease in equal measure.", badge: "Bhutan", image: "/images/Bhutan-trek-cultural-passage.jpg", href: "/contact" },
-  { title: "Kerala-led coastal pause", subtitle: "A gentle overseas-style reset with strong local character", description: "A warm, design-led concept for travellers who want comfort and texture.", badge: "Wellness-led", image: "/images/Kerala-backwater-hill-retreat.jpg", href: "/contact" },
+  {
+    title: "Switzerland alpine escape",
+    subtitle: "Snow-capped peaks, scenic rail journeys, and lakeside villages",
+    description:
+      "Discover iconic mountain landscapes with luxury stays, panoramic train rides, and unforgettable alpine experiences.",
+    badge: "Switzerland",
+    image: "/images/switzerland.jpg",
+    href: "/contact",
+  },
+  {
+    title: "Bali tropical retreat",
+    subtitle: "Emerald rice terraces, beach sunsets, and wellness escapes",
+    description:
+      "Unwind with private pool villas, cultural experiences, island adventures, and tranquil spa retreats.",
+    badge: "Bali",
+    image: "/images/bali.jpg",
+    href: "/contact",
+  },
+  {
+    title: "Dubai luxury getaway",
+    subtitle: "Modern skylines, desert adventures, and world-class hospitality",
+    description:
+      "Experience iconic landmarks, premium shopping, fine dining, and exclusive desert experiences with effortless comfort.",
+    badge: "Dubai",
+    image: "/images/dubai.jpg",
+    href: "/contact",
+  },
 ];
 
 export const metadata: Metadata = {
   title: "Overseas Travel | Mad Compass",
-  description: "Discover curated overseas holidays designed with comfort, depth, and attention to your travel preferences.",
+  description:
+    "Discover curated overseas holidays designed with comfort, depth, and attention to your travel preferences.",
 };
 
 export default function OverseasPage() {
@@ -36,33 +61,49 @@ export default function OverseasPage() {
         description="The most memorable overseas journeys are rarely the most crowded. We build around your rhythm, your interests, and the kind of experience you want to carry home with you."
         primaryCta={{ label: "Start planning", href: "/contact" }}
         secondaryCta={{ label: "Talk to a specialist", href: "/contact" }}
-        image="/images/Japan-soft-luxury-discovery.jpg"
+        image="/images/overseas.jpg"
         imageAlt="An elegant overseas travel experience"
       />
 
       <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Why clients choose us</p>
-            <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">A wider world, shaped with calm expertise and personal attention.</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">
+              Why clients choose us
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">
+              A wider world, shaped with calm expertise and personal attention.
+            </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#655b4f]">
-              We help travellers choose between culture-led city stays, nature-first escapes, or slower, more restorative journeys without making the planning feel rigid.
+              We help travellers choose between culture-led city stays,
+              nature-first escapes, or slower, more restorative journeys without
+              making the planning feel rigid.
             </p>
             <div className="mt-8 space-y-3 rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-6">
               {highlights.map((item) => (
-                <div key={item} className="flex items-start gap-3 text-sm leading-7 text-[#5d4944]">
+                <div
+                  key={item}
+                  className="flex items-start gap-3 text-sm leading-7 text-[#5d4944]"
+                >
                   <span className="mt-1 size-2 rounded-full bg-[#c20b0b]" />
                   <span>{item}</span>
                 </div>
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild className="bg-[#c20b0b] text-white shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#a70a0a] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)]">
+              <Button
+                asChild
+                className="bg-[#c20b0b] text-white shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#a70a0a] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)]"
+              >
                 <Link href="/contact">
                   Start planning <ArrowRight className="size-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="border-[#efe2dc] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)]">
+              <Button
+                asChild
+                variant="outline"
+                className="border-[#efe2dc] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)]"
+              >
                 <Link href="/contact">Talk to a specialist</Link>
               </Button>
             </div>
@@ -81,7 +122,12 @@ export default function OverseasPage() {
 
       <Reveal className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
         <div className="max-w-3xl rounded-4xl border border-[#efe2dc] bg-white p-8 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
-          <TestimonialCard name={testimonials[2].name} location={testimonials[2].location} quote={testimonials[2].quote} trip={testimonials[2].trip} />
+          <TestimonialCard
+            name={testimonials[2].name}
+            location={testimonials[2].location}
+            quote={testimonials[2].quote}
+            trip={testimonials[2].trip}
+          />
         </div>
       </Reveal>
     </main>

@@ -21,7 +21,7 @@ export default function ContactPage() {
         description="Share a few details and we will respond with a thoughtful first recommendation, along with the next steps for planning your holiday."
         primaryCta={{ label: "Call us", href: `tel:${siteContent.phone}` }}
         secondaryCta={{ label: "WhatsApp us", href: siteContent.whatsapp }}
-        image="/images/Japan-soft-luxury-discovery.jpg"
+        image="/images/contact.jpg"
         imageAlt="A polished overseas travel experience"
       />
 

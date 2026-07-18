@@ -19,12 +19,12 @@ const highlights = [
 
 const journeys = [
   {
-    title: "Kerala backwaters & tea country",
-    subtitle: "Quiet canals, spice routes, and restored heritage stays",
+    title: "Goa beaches & coastal charm",
+    subtitle: "Golden shores, Portuguese heritage, and vibrant beach life",
     description:
-      "A gentle pace with houseboats, wellness stops, and private transfers.",
-    badge: "Slow domestic",
-    image: "/images/Kerala-backwater-hill-retreat.jpg",
+      "Relax with scenic beach stays, sunset cruises, local seafood, and seamless private transfers.",
+    badge: "Coastal escape",
+    image: "/images/goa.jpg",
     href: "/contact",
   },
   {
@@ -33,7 +33,7 @@ const journeys = [
     description:
       "Ideal for couples or families who want altitude, scenery, and stillness.",
     badge: "Mountain escape",
-    image: "/images/Bhutan-trek-cultural-passage.jpg",
+    image: "/images/darjeeling.jpg",
     href: "/contact",
   },
   {
@@ -42,7 +42,7 @@ const journeys = [
     description:
       "Elegant pacing for culture lovers who want depth without rush.",
     badge: "Culture-led",
-    image: "/images/Japan-soft-luxury-discovery.jpg",
+    image: "/images/rajasthan.jpg",
     href: "/contact",
   },
 ];
@@ -62,7 +62,7 @@ export default function DomesticPage() {
         description="Whether you are dreaming of a quiet mountain reset, a heritage-led circuit, or a celebratory holiday with friends and family, we shape it around your preferences rather than a preset package."
         primaryCta={{ label: "Start planning", href: "/contact" }}
         secondaryCta={{ label: "Talk to a specialist", href: "/contact" }}
-        image="/images/Kerala-backwater-hill-retreat.jpg"
+        image="/images/domestic.jpg"
         imageAlt="An elegant domestic holiday in Kerala"
       />
 

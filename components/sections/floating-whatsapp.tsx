@@ -11,7 +11,7 @@ export function FloatingWhatsApp() {
       href={siteContent.whatsapp}
       target="_blank"
       rel="noreferrer"
-      aria-label="Contact Mad Compass on WhatsApp"
+      aria-label="Contact us on WhatsApp"
       className="fixed bottom-5 right-5 z-60 flex items-center gap-3 rounded-full border border-[#f0d6d1] bg-[#25D366] px-4 py-3 text-sm font-semibold text-white shadow-[0_20px_45px_rgba(37,211,102,0.3)] transition-transform duration-300 hover:-translate-y-1 sm:bottom-6 sm:right-6"
     >
       <MessageCircle className="size-5" />
