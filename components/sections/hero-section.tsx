@@ -9,8 +9,8 @@ import { siteContent } from "@/data/content";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0b0b0b] text-[#f8efe7]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(184,107,61,0.35),_transparent_35%),linear-gradient(135deg,_rgba(0,0,0,0.85),_rgba(0,0,0,0.35))]" />
+    <section className="relative overflow-hidden bg-[#111111] text-[#f8efe7]">
+      <div className="absolute inset-0 bg-black/75" />
       <div className="relative mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 py-24 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -18,7 +18,7 @@ export function HeroSection() {
           transition={{ duration: 0.55 }}
           className="max-w-3xl"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#f8efe7]/20 bg-[#f8efe7]/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-[#f6d8b8]">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#f8efe7]/20 bg-[#f8efe7]/10 px-4 py-2 text-sm uppercase tracking-[0.3em] text-[#f4b1a8]">
             <Compass className="size-4" />
             {siteContent.heroEyebrow}
           </div>
@@ -29,7 +29,7 @@ export function HeroSection() {
             {siteContent.heroSubtext}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" className="bg-[#b86b3d] hover:bg-[#9f5a31]">
+            <Button asChild size="lg" className="bg-[#c20b0b] shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#a70a0a] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)]">
               <Link href="/contact">
                 Plan My Journey <ArrowRight className="size-4" />
               </Link>

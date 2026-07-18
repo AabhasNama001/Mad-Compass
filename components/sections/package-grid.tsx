@@ -17,7 +17,7 @@ export function PackageGrid() {
             Travel experiences designed to feel effortless and memorable.
           </h2>
         </div>
-        <Button asChild variant="outline" className="border-[#7a5c2f]/20 text-[#1f1a17]">
+        <Button asChild variant="outline" className="border-[#7a5c2f]/20 text-[#1f1a17] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)]">
           <Link href="/packages">Browse all packages</Link>
         </Button>
       </div>
@@ -32,7 +32,7 @@ export function PackageGrid() {
             transition={{ delay: index * 0.08, duration: 0.35 }}
             className="overflow-hidden rounded-[2rem] border border-[#e9dcca] bg-[#fffaf4] shadow-[0_24px_80px_rgba(23,16,10,0.08)]"
           >
-            <div className="h-48 w-full bg-[radial-gradient(circle_at_top_left,_rgba(184,107,61,0.22),_transparent_35%),linear-gradient(135deg,_#1f1a17,_#5f4330)]" />
+            <div className="h-48 w-full bg-gradient-to-br from-[#1f1a17] to-[#5f4330]" />
             <div className="p-6">
               <div className="flex items-center justify-between gap-3">
                 <span className="rounded-full bg-[#f1e0cc] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#8b4d24]">
@@ -54,7 +54,7 @@ export function PackageGrid() {
                   <p className="text-sm text-[#8e7d68]">Starting from</p>
                   <p className="text-xl font-semibold text-[#1f1a17]">{pkg.priceFrom}</p>
                 </div>
-                <Button asChild size="sm" className="bg-[#1f1a17] hover:bg-[#2f251d]">
+                <Button asChild size="sm" className="bg-[#1f1a17] shadow-[0_12px_28px_rgba(17,17,17,0.16)] hover:bg-[#2f251d] hover:shadow-[0_16px_34px_rgba(17,17,17,0.22)]">
                   <Link href={`/packages/${pkg.slug}`}>
                     Enquire <ArrowUpRight className="size-4" />
                   </Link>

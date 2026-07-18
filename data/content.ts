@@ -22,11 +22,11 @@ export type SiteContent = {
 export const siteContent: SiteContent = {
   brandName: "Mad Compass",
   companyName: "Mad Compass Travel & Tours",
-  tagline: "Here to take you places!",
+  tagline: "Thoughtful travel, carefully planned",
   heroEyebrow: "Bespoke holidays, guided personally",
-  heroHeadline: "Tailored holidays shaped around your pace, your people, and your budget.",
+  heroHeadline: "Thoughtful holidays shaped around your pace, your people, and the stories you want to bring home.",
   heroSubtext:
-    "We do not sell fixed packages. We listen first, recommend thoughtfully, and build a holiday around your preferences — then refine it with you until it feels right.",
+    "We plan with intention rather than templates — pairing local insight, calm logistics, and personal guidance so every journey feels considered from the first conversation.",
   address: "Kolkata, India",
   gst: "GST: 19AAXXX0000X1ZX",
   phone: "+91 9711193458",

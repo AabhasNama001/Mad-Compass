@@ -265,16 +265,16 @@ export function EnquiryForm() {
             </div>
             <div className="flex flex-wrap gap-3">
               {step > 0 ? (
-                <Button type="button" variant="outline" onClick={handleBack} className="border-[#f0d6d1] bg-white text-[#17120f]">
+                <Button type="button" variant="outline" onClick={handleBack} className="border-[#f0d6d1] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)]">
                   Back
                 </Button>
               ) : null}
               {step < 5 ? (
-                <Button type="button" onClick={handleNext} className="bg-[#d13b2f] hover:bg-[#b92f24]">
+                <Button type="button" onClick={handleNext} className="bg-[#d13b2f] shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] text-white">
                   Continue <ArrowRight className="size-4" />
                 </Button>
               ) : (
-                <Button type="submit" className="bg-[#d13b2f] hover:bg-[#b92f24]" disabled={isSubmitting}>
+                <Button type="submit" className="bg-[#d13b2f] shadow-[0_16px_35px_rgba(194,11,11,0.22)] text-white hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)]" disabled={isSubmitting}>
                   {isSubmitting ? "Sending..." : "Send enquiry"}
                 </Button>
               )}
@@ -289,12 +289,12 @@ export function EnquiryForm() {
             We will be in touch soon with a tailored first recommendation and next steps. If you prefer, you can also reach us directly on WhatsApp at <a href={siteContent.whatsapp} className="font-semibold text-[#d13b2f]">{siteContent.phone}</a>.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Button asChild className="bg-[#d13b2f] hover:bg-[#b92f24]">
+            <Button asChild className="bg-[#d13b2f] shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)]">
               <a href={siteContent.whatsapp} target="_blank" rel="noreferrer">
                 <MessageCircle className="size-4" /> WhatsApp us
               </a>
             </Button>
-            <Button asChild variant="outline" className="border-[#f0d6d1] bg-white text-[#17120f]">
+            <Button asChild variant="outline" className="border-[#f0d6d1] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)]">
               <a href="mailto:hello@madcompass.com">Email us</a>
             </Button>
           </div>

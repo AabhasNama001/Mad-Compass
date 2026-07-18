@@ -1,23 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 import { Footer } from "@/components/sections/footer";
 import { Navbar } from "@/components/sections/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Mad Compass | Tailored Holidays, Curated With Care",
   description: "Mad Compass creates personalised domestic and overseas holidays with a warm, specialist-led planning experience.",
+  metadataBase: new URL("https://madcompass.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Mad Compass | Tailored Holidays, Curated With Care",
+    description: "Mad Compass creates personalised domestic and overseas holidays with a warm, specialist-led planning experience.",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
@@ -25,12 +39,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: "Mad Compass",
+    url: "https://madcompass.com",
+    telephone: "+919711193458",
+    email: "hello@madcompass.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Kolkata",
+      addressCountry: "India",
+    },
+    description:
+      "Mad Compass creates personalised domestic and overseas holidays with a warm, specialist-led planning experience.",
+  };
+
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="flex min-h-screen flex-col bg-[#fffdfc] text-[#17120f]">
+      <body className="flex min-h-screen flex-col bg-white text-[#111111]">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

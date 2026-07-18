@@ -6,8 +6,11 @@ import { ArrowRight, Compass, MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { siteContent } from "@/data/content";
 import { EnquiryForm } from "@/components/sections/enquiry-form";
+import { PhotoShowcaseCard } from "@/components/sections/photo-showcase-card";
+import { TestimonialCard } from "@/components/sections/testimonial-card";
+import { siteContent } from "@/data/content";
+import { testimonials } from "@/data/testimonials";
 
 const pillars = [
   {
@@ -86,9 +89,7 @@ const sectionMotion = {
 export default function Home() {
   return (
     <main className="flex-1 bg-[#fffdfc]">
-      <section className="relative overflow-hidden border-b border-[#f4e3de] bg-[#fff8f5]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(209,59,47,0.1),_transparent_32%),radial-gradient(circle_at_bottom_right,_rgba(209,59,47,0.06),_transparent_28%)]" />
-        <div className="absolute inset-x-0 top-0 h-[320px] bg-[linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(255,253,252,0.3))]" />
+      <section className="relative overflow-hidden border-b border-[#efe2dc] bg-white">
         <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12 lg:py-28">
           <div className="grid gap-10 lg:grid-cols-[1.25fr_0.9fr] lg:items-center">
             <motion.div
@@ -98,22 +99,22 @@ export default function Home() {
               transition={{ duration: 0.65 }}
               variants={sectionMotion}
             >
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#f0d6d1] bg-white/90 px-4 py-2 text-sm uppercase tracking-[0.3em] text-[#d13b2f] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#efe2dc] bg-white/90 px-4 py-2 text-sm uppercase tracking-[0.3em] text-[#c20b0b] backdrop-blur-sm">
                 <Compass className="size-4" /> {siteContent.tagline}
               </div>
               <h1 className="mt-6 max-w-3xl text-5xl font-semibold tracking-tight text-[#17120f] sm:text-6xl lg:text-7xl">
                 {siteContent.heroHeadline}
               </h1>
-              <p className="mt-6 max-w-2xl text-lg leading-9 text-[#5e4c45] sm:text-xl">
+              <p className="mt-6 max-w-2xl text-lg leading-9 text-[#5f554c] sm:text-xl">
                 {siteContent.heroSubtext}
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                <Button asChild className="bg-[#d13b2f] hover:bg-[#b92f24]">
+                <Button asChild className="bg-[#d13b2f] text-white hover:bg-[#b92f24]">
                   <Link href="/contact">
                     Start your enquiry <ArrowRight className="size-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" className="border-[#f0d6d1] bg-white text-[#17120f] shadow-sm">
+                <Button asChild variant="outline" className="border-[#efe2dc] bg-green-400 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:-translate-y-0.5 hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)]">
                   <Link href={siteContent.whatsapp} target="_blank" rel="noreferrer">
                     <MessageCircle className="size-4" /> WhatsApp us
                   </Link>
@@ -127,22 +128,20 @@ export default function Home() {
               viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.65, delay: 0.12 }}
               variants={sectionMotion}
-              className="relative overflow-hidden rounded-[2.5rem] border border-[#f3e0db] bg-[#fff9f6] p-8 shadow-[0_40px_120px_rgba(19,14,10,0.08)] sm:p-10"
+              className="relative overflow-hidden rounded-[2.5rem] border border-[#efe2dc] bg-white p-8 shadow-[0_40px_120px_rgba(19,14,10,0.08)] sm:p-10"
             >
-              <div className="absolute -right-16 top-8 h-48 w-48 rounded-full bg-[#d13b2f]/10 blur-3xl" aria-hidden="true" />
-              <div className="absolute -left-12 bottom-10 h-40 w-40 rounded-full bg-[#d13b2f]/10 blur-3xl" aria-hidden="true" />
-              <div className="relative rounded-[2rem] border border-[#f0d6d1] bg-white p-8 sm:p-10">
-                <p className="text-sm uppercase tracking-[0.3em] text-[#d13b2f]">Featured focus</p>
-                <h2 className="mt-4 text-3xl font-semibold text-[#17120f] sm:text-4xl">A premium travel experience that still feels personal.</h2>
+              <div className="relative rounded-[2rem] border border-[#efe2dc] bg-[#fffdfc] p-8 sm:p-10">
+                <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Featured focus</p>
+                <h2 className="mt-4 text-3xl font-semibold text-[#17120f] sm:text-4xl">A polished travel experience that still feels personal.</h2>
                 <p className="mt-4 text-sm leading-7 text-[#655b4f] sm:text-base">
-                  A subtle visual treatment helps the hero feel more premium without losing the calm, minimal character of the brand.
+                  The experience is shaped with quiet sophistication, thoughtful pacing, and the kind of guidance that makes the planning feel as calm as the journey itself.
                 </p>
                 <div className="mt-8 space-y-4">
-                  <div className="rounded-[1.75rem] border border-[#f5e4e0] bg-[#fff2ee] p-5">
+                  <div className="rounded-[1.75rem] border border-[#efe2dc] bg-white p-5">
                     <p className="text-sm font-semibold text-[#17120f]">Curated attention</p>
                     <p className="mt-2 text-sm leading-7 text-[#655b4f]">Every enquiry goes to a specialist who can guide the first recommendation with care.</p>
                   </div>
-                  <div className="rounded-[1.75rem] border border-[#f5e4e0] bg-[#fff2ee] p-5">
+                  <div className="rounded-[1.75rem] border border-[#efe2dc] bg-white p-5">
                     <p className="text-sm font-semibold text-[#17120f]">Tailored approach</p>
                     <p className="mt-2 text-sm leading-7 text-[#655b4f]">No fixed packages. No generic planning. Just holidays built around your preferences.</p>
                   </div>
@@ -156,7 +155,7 @@ export default function Home() {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                className="rounded-full border border-[#f0d6d1] bg-white px-4 py-3 text-sm font-semibold text-[#17120f] transition hover:border-[#d13b2f] hover:text-[#d13b2f]"
+                className="rounded-full border border-[#efe2dc] bg-white px-4 py-3 text-sm font-semibold text-[#17120f] transition hover:border-[#c20b0b] hover:text-[#c20b0b]"
               >
                 {section.label}
               </a>
@@ -174,10 +173,10 @@ export default function Home() {
           variants={sectionMotion}
           className="mb-10 max-w-3xl"
         >
-          <p className="text-sm uppercase tracking-[0.3em] text-[#d13b2f]">Discover</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">A homepage that helps visitors move quickly from curiosity to clarity.</h2>
+          <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Discover</p>
+          <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">A welcome that makes the next step feel clear and natural.</h2>
           <p className="mt-5 text-lg leading-8 text-[#655b4f]">
-            Every section is purposeful: the hero introduces the promise, the cards outline the travel categories clearly, and the next panel makes enquiry the natural next step.
+            The journey unfolds gently from inspiration to clarity, with each section introducing a different side of the experience — from destination moods to specialist-led planning.
           </p>
         </motion.div>
 
@@ -189,17 +188,16 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group overflow-hidden rounded-[2rem] border border-[#f0d6d1] bg-white shadow-[0_24px_80px_rgba(20,15,10,0.06)] transition-transform hover:-translate-y-1 hover:border-[#d13b2f]"
+              className="group overflow-hidden rounded-[2rem] border border-[#efe2dc] bg-white shadow-[0_24px_80px_rgba(20,15,10,0.06)] transition-transform hover:-translate-y-1 hover:border-[#c20b0b]"
             >
               <div className="relative overflow-hidden bg-[#fff2ef]">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(209,59,47,0.18),_transparent_25%),radial-gradient(circle_at_bottom_right,_rgba(209,59,47,0.08),_transparent_30%)]" />
                 <div className="relative h-48 p-6">
                   <div className="flex h-full flex-col justify-between rounded-[2rem] bg-[#fffdf8] p-4 shadow-[inset_0_0_0_1px_rgba(209,59,47,0.06)]">
                     <div className="flex items-center justify-between gap-3">
-                      <span className="rounded-full bg-[#fff4f0] px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#d13b2f]">{card.label}</span>
+                      <span className="rounded-full bg-[#fff4f0] px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#c20b0b]">{card.label}</span>
                       <span className="text-xs text-[#7d675f]">Quick view</span>
                     </div>
-                    <div className="rounded-[1.75rem] bg-[#fff4f0] p-4 text-sm leading-7 text-[#655b4f] shadow-[inset_0_0_0_1px_rgba(209,59,47,0.08)]">
+                    <div className="rounded-[1.75rem] bg-white p-4 text-sm leading-7 text-[#655b4f] shadow-[inset_0_0_0_1px_rgba(194,11,11,0.08)]">
                       {card.accent}
                     </div>
                   </div>
@@ -211,11 +209,11 @@ export default function Home() {
                 <div className="flex items-center justify-between pt-4">
                   <Link
                     href={card.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#d13b2f] opacity-90 transition group-hover:opacity-100"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[#c20b0b] opacity-90 transition group-hover:opacity-100"
                   >
                     Explore <ArrowRight className="size-4" />
                   </Link>
-                  <span className="rounded-full bg-[#fdf0ef] px-3 py-1 text-xs uppercase tracking-[0.23em] text-[#b9452f]">Tailored journeys</span>
+                  <span className="rounded-full bg-[#fdf0ef] px-3 py-1 text-xs uppercase tracking-[0.23em] text-[#a70a0a]">Tailored journeys</span>
                 </div>
               </div>
             </motion.article>
@@ -230,29 +228,16 @@ export default function Home() {
           variants={sectionMotion}
           className="grid gap-6 lg:grid-cols-3"
         >
-          {featuredJourneys.map((journey, index) => (
-            <article
+          {featuredJourneys.map((journey) => (
+            <PhotoShowcaseCard
               key={journey.title}
-              className="overflow-hidden rounded-[2rem] bg-[#17120f] text-white shadow-[0_24px_90px_rgba(23,18,14,0.18)]"
-            >
-              <div className="relative h-72 overflow-hidden">
-                <Image src={journey.image} alt={journey.title} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
-                <div className="absolute inset-0 bg-[linear-gradient(160deg,_rgba(23,18,14,0.3),_transparent_42%)]" />
-                <div className="relative z-10 flex h-full flex-col justify-between p-6">
-                  <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.24em] text-white/90">{journey.badge}</span>
-                  <div className="space-y-3">
-                    <h3 className="text-2xl font-semibold tracking-tight text-white">{journey.title}</h3>
-                    <p className="text-sm leading-6 text-white/80">{journey.subtitle}</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-4 p-6 bg-[#0f0c0b]">
-                <p className="text-sm leading-7 text-[#d7c6b3]">{journey.description}</p>
-                <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-semibold text-[#f8efe7] opacity-95 hover:text-white">
-                  Enquire about this <ArrowRight className="size-4" />
-                </Link>
-              </div>
-            </article>
+              title={journey.title}
+              subtitle={journey.subtitle}
+              description={journey.description}
+              badge={journey.badge}
+              image={journey.image}
+              href="/contact"
+            />
           ))}
         </motion.div>
       </section>
@@ -317,6 +302,14 @@ export default function Home() {
         </motion.div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
+        <div className="grid gap-6 lg:grid-cols-3">
+          {testimonials.slice(0, 3).map((item) => (
+            <TestimonialCard key={item.name} name={item.name} location={item.location} quote={item.quote} trip={item.trip} />
+          ))}
+        </div>
+      </section>
+
       <section id="vision" className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
         <motion.div
           initial="hidden"
@@ -332,7 +325,7 @@ export default function Home() {
               <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">We would love to understand how you like to travel.</h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-[#655b4f]">Share a few thoughts and we will turn that into a thoughtful first recommendation — whether you are planning a long weekend or a far-flung adventure.</p>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Button asChild className="bg-[#d13b2f] hover:bg-[#b92f24]">
+                <Button asChild className="bg-[#d13b2f] text-white hover:bg-[#b92f24]">
                   <Link href="/contact">Send your enquiry</Link>
                 </Button>
                 <Button asChild variant="outline" className="border-[#f0d6d1] bg-white text-[#17120f]">

@@ -3,21 +3,15 @@
 @import "shadcn/tailwind.css";
 
 :root {
-  --background: #fffdfc;
-  --foreground: #17120f;
-  --primary: #d13b2f;
-  --primary-foreground: #fff7f5;
-  --secondary: #fff4f0;
-  --secondary-foreground: #17120f;
-  --muted: #f7ece8;
-  --muted-foreground: #6f574f;
-  --accent: #f2d8d3;
-  --accent-foreground: #6f574f;
-  --destructive: #c94f3d;
-  --border: #f0d6d1;
-  --input: #fff7f5;
-  --ring: #d13b2f;
-  --radius: 1.25rem;
+  --background: #ffffff;
+  --foreground: #111111;
+  --primary: #c20b0b;
+  --primary-foreground: #ffffff;
+  --muted: #5f554c;
+  --border: #ece7e4;
+  --input: #faf7f5;
+  --ring: #c20b0b;
+  --radius: 1.5rem;
 }
 
 * {
@@ -25,15 +19,34 @@
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
   margin: 0;
+  min-height: 100vh;
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
   font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
 }
 
 button,
@@ -45,6 +58,6 @@ select {
 }
 
 ::selection {
-  background: #f4d3cd;
-  color: #17120f;
+  background: rgba(194, 11, 11, 0.16);
+  color: var(--foreground);
 }

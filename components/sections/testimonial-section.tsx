@@ -6,11 +6,11 @@ import { testimonials } from "@/data/testimonials";
 
 export function TestimonialSection() {
   return (
-    <section className="bg-[#f7efe6] px-6 py-20 sm:px-8 lg:px-12">
+    <section className="bg-[#fffdfc] px-6 py-20 sm:px-8 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#b86b3d]">Guest notes</p>
-          <h2 className="mt-3 text-3xl font-semibold text-[#1f1a17] sm:text-4xl">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Guest notes</p>
+          <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">
             The kind of service that feels reassuring before the trip even begins.
           </h2>
         </div>
@@ -22,11 +22,11 @@ export function TestimonialSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.08, duration: 0.35 }}
-              className="rounded-[1.75rem] border border-[#e5d7c4] bg-white p-6 shadow-[0_18px_60px_rgba(36,28,17,0.06)]"
+              className="rounded-[1.75rem] border border-[#efe2dc] bg-white p-6 shadow-[0_24px_80px_rgba(17,17,17,0.08)]"
             >
               <p className="text-base leading-8 text-[#4f433c]">“{item.quote}”</p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1f1a17] text-sm font-semibold text-[#f8efe7]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#c20b0b] text-sm font-semibold text-white">
                   {item.name.charAt(0)}
                 </div>
                 <div>
