@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { EnquiryForm } from "@/components/sections/enquiry-form";
 import { PageHero } from "@/components/sections/page-hero";
 import { PhotoShowcaseCard } from "@/components/sections/photo-showcase-card";
+import { Reveal } from "@/components/sections/reveal";
 import { TestimonialCard } from "@/components/sections/testimonial-card";
 import { testimonials } from "@/data/testimonials";
 
@@ -39,7 +40,7 @@ export default function OverseasPage() {
         imageAlt="An elegant overseas travel experience"
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
+      <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Why clients choose us</p>
@@ -47,7 +48,7 @@ export default function OverseasPage() {
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#655b4f]">
               We help travellers choose between culture-led city stays, nature-first escapes, or slower, more restorative journeys without making the planning feel rigid.
             </p>
-            <div className="mt-8 space-y-3 rounded-[2rem] border border-[#efe2dc] bg-[#fffdfc] p-6">
+            <div className="mt-8 space-y-3 rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-6">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3 text-sm leading-7 text-[#5d4944]">
                   <span className="mt-1 size-2 rounded-full bg-[#c20b0b]" />
@@ -68,21 +69,21 @@ export default function OverseasPage() {
           </div>
           <EnquiryForm />
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
+      <Reveal className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
         <div className="grid gap-6 lg:grid-cols-3">
           {journeys.map((journey) => (
             <PhotoShowcaseCard key={journey.title} {...journey} />
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
-        <div className="max-w-3xl rounded-[2rem] border border-[#efe2dc] bg-white p-8 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
+      <Reveal className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
+        <div className="max-w-3xl rounded-4xl border border-[#efe2dc] bg-white p-8 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
           <TestimonialCard name={testimonials[2].name} location={testimonials[2].location} quote={testimonials[2].quote} trip={testimonials[2].trip} />
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

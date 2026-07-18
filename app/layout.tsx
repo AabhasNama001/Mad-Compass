@@ -3,7 +3,9 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 
 import { Footer } from "@/components/sections/footer";
-import { Navbar } from "@/components/sections/navbar";
+import { FloatingWhatsApp } from "@/components/sections/floating-whatsapp";
+import { Header } from "@/components/sections/header";
+import { PageTransition } from "@/components/sections/page-transition";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -65,9 +67,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
-        <main className="flex-1">{children}</main>
+        <Header />
+        <PageTransition>{children}</PageTransition>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );

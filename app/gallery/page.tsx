@@ -26,7 +26,7 @@ export default function GalleryPage() {
       <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {packages.slice(0, 4).map((pkg, index) => (
-            <div key={pkg.slug} className="overflow-hidden rounded-[2rem] border border-[#efe2dc] bg-white shadow-[0_24px_80px_rgba(17,17,17,0.06)]">
+            <div key={pkg.slug} className="overflow-hidden rounded-4xl border border-[#efe2dc] bg-white shadow-[0_24px_80px_rgba(17,17,17,0.06)]">
               <div className="h-56 w-full bg-[#1f1a17]" />
               <div className="p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">{index % 2 === 0 ? "Signature stay" : "Scene"}</p>

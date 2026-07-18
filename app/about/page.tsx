@@ -3,7 +3,10 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { FaqSection } from "@/components/sections/faq-section";
+import { InstagramSection } from "@/components/sections/instagram-section";
 import { PageHero } from "@/components/sections/page-hero";
+import { Reveal } from "@/components/sections/reveal";
 import { TestimonialCard } from "@/components/sections/testimonial-card";
 import { siteContent } from "@/data/content";
 import { testimonials } from "@/data/testimonials";
@@ -37,7 +40,7 @@ export default function AboutPage() {
         imageAlt="A bespoke travel experience in Kerala"
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
+      <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Our approach</p>
@@ -58,7 +61,7 @@ export default function AboutPage() {
               </Button>
             </div>
           </div>
-          <div className="rounded-[2rem] border border-[#efe2dc] bg-[#fffdfc] p-8 shadow-[0_24px_80px_rgba(20,15,10,0.05)]">
+          <div className="rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-8 shadow-[0_24px_80px_rgba(20,15,10,0.05)]">
             <h3 className="text-2xl font-semibold text-[#17120f]">What defines us</h3>
             <ul className="mt-6 space-y-3 text-sm leading-7 text-[#5d4944]">
               {values.map((value) => (
@@ -70,10 +73,10 @@ export default function AboutPage() {
             </ul>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
-        <div className="rounded-[2rem] border border-[#efe2dc] bg-white p-8 shadow-[0_24px_80px_rgba(17,17,17,0.06)] sm:p-10">
+      <Reveal className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
+        <div className="rounded-4xl border border-[#efe2dc] bg-white p-8 shadow-[0_24px_80px_rgba(17,17,17,0.06)] sm:p-10">
           <div className="max-w-2xl">
             <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Our people</p>
             <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">A small team with a big attention to detail.</h2>
@@ -89,18 +92,21 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
+      <FaqSection />
+      <InstagramSection />
+
+      <Reveal className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
         <div className="grid gap-6 lg:grid-cols-3">
           {testimonials.slice(0, 3).map((item) => (
             <TestimonialCard key={item.name} name={item.name} location={item.location} quote={item.quote} trip={item.trip} />
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
-        <div className="rounded-[2rem] border border-[#efe2dc] bg-[#fff8f5] p-8 text-center sm:p-10">
+      <Reveal className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
+        <div className="rounded-4xl border border-[#efe2dc] bg-[#fff8f5] p-8 text-center sm:p-10">
           <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Start your journey</p>
           <h2 className="mt-3 text-3xl font-semibold text-[#17120f] sm:text-4xl">Tell us what you are dreaming of and we will shape the first step together.</h2>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -112,7 +118,7 @@ export default function AboutPage() {
             </Button>
           </div>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

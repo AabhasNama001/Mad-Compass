@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -26,7 +27,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-white">
-      <div className="relative mx-auto flex min-h-[680px] max-w-7xl flex-col justify-end px-6 pb-20 pt-16 sm:px-8 lg:px-12 lg:pb-24">
+      <div className="relative mx-auto flex min-h-170 max-w-7xl flex-col justify-end px-6 pb-20 pt-16 sm:px-8 lg:px-12 lg:pb-24">
         <div className="absolute inset-0">
           <Image
             src={image}
@@ -37,7 +38,13 @@ export function PageHero({
           />
           <div className="absolute inset-0 bg-black/70" />
         </div>
-        <div className="relative z-10 max-w-3xl rounded-[2rem] border border-white/20 bg-[#111111]/70 p-8 text-white shadow-[0_40px_120px_rgba(0,0,0,0.25)] sm:p-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55 }}
+          className="relative z-10 max-w-3xl rounded-4xl border border-white/20 bg-[#111111]/70 p-8 text-white shadow-[0_40px_120px_rgba(0,0,0,0.25)] sm:p-10"
+        >
           <p className="text-sm uppercase tracking-[0.35em] text-[#f8efe7] opacity-90">
             {eyebrow}
           </p>
@@ -62,7 +69,7 @@ export function PageHero({
               <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
             </Button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

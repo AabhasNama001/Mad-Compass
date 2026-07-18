@@ -9,7 +9,7 @@ export function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col gap-10 lg:flex-row lg:justify-between">
         <div className="max-w-xl">
           <p className="text-sm uppercase tracking-[0.3em] text-[#f0b8ae]">{siteContent.brandName}</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">{siteContent.tagline}</h2>
+          <h2 className="mt-3 text-2xl font-semibold text-white">Here to take you places!</h2>
           <p className="mt-4 text-sm leading-7 text-[#d7c6b3]">{siteContent.address}</p>
           <p className="mt-1 text-sm text-[#d7c6b3]">{siteContent.phone}</p>
           <p className="mt-1 text-sm text-[#d7c6b3]">{siteContent.email}</p>

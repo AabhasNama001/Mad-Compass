@@ -7,8 +7,11 @@ import { motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 import { EnquiryForm } from "@/components/sections/enquiry-form";
+import { FaqSection } from "@/components/sections/faq-section";
+import { InstagramSection } from "@/components/sections/instagram-section";
 import { PhotoShowcaseCard } from "@/components/sections/photo-showcase-card";
 import { TestimonialCard } from "@/components/sections/testimonial-card";
+import { TrustStats } from "@/components/sections/trust-stats";
 import { siteContent } from "@/data/content";
 import { testimonials } from "@/data/testimonials";
 
@@ -130,7 +133,7 @@ export default function Home() {
               variants={sectionMotion}
               className="relative overflow-hidden rounded-[2.5rem] border border-[#efe2dc] bg-white p-8 shadow-[0_40px_120px_rgba(19,14,10,0.08)] sm:p-10"
             >
-              <div className="relative rounded-[2rem] border border-[#efe2dc] bg-[#fffdfc] p-8 sm:p-10">
+              <div className="relative rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-8 sm:p-10">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">Featured focus</p>
                 <h2 className="mt-4 text-3xl font-semibold text-[#17120f] sm:text-4xl">A polished travel experience that still feels personal.</h2>
                 <p className="mt-4 text-sm leading-7 text-[#655b4f] sm:text-base">
@@ -164,6 +167,8 @@ export default function Home() {
         </div>
       </section>
 
+      <TrustStats />
+
       <section id="discover" className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <motion.div
           initial="hidden"
@@ -188,11 +193,11 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.08 }}
-              className="group overflow-hidden rounded-[2rem] border border-[#efe2dc] bg-white shadow-[0_24px_80px_rgba(20,15,10,0.06)] transition-transform hover:-translate-y-1 hover:border-[#c20b0b]"
+              className="group overflow-hidden rounded-4xl border border-[#efe2dc] bg-white shadow-[0_24px_80px_rgba(20,15,10,0.06)] transition-transform hover:-translate-y-1 hover:border-[#c20b0b]"
             >
               <div className="relative overflow-hidden bg-[#fff2ef]">
                 <div className="relative h-48 p-6">
-                  <div className="flex h-full flex-col justify-between rounded-[2rem] bg-[#fffdf8] p-4 shadow-[inset_0_0_0_1px_rgba(209,59,47,0.06)]">
+                  <div className="flex h-full flex-col justify-between rounded-4xl bg-[#fffdf8] p-4 shadow-[inset_0_0_0_1px_rgba(209,59,47,0.06)]">
                     <div className="flex items-center justify-between gap-3">
                       <span className="rounded-full bg-[#fff4f0] px-3 py-1 text-xs uppercase tracking-[0.24em] text-[#c20b0b]">{card.label}</span>
                       <span className="text-xs text-[#7d675f]">Quick view</span>
@@ -280,19 +285,19 @@ export default function Home() {
               The homepage should reassure visitors that planning is never rushed: it begins with a conversation, evolves with your feedback, and lands in a holiday shaped for you.
             </p>
           </div>
-          <div className="rounded-[2rem] border border-[#f0d6d1] bg-[#fff8f5] p-8">
+          <div className="rounded-4xl border border-[#f0d6d1] bg-[#fff8f5] p-8">
             <div className="space-y-6">
-              <div className="rounded-[1.5rem] border border-[#f7e2de] bg-white p-6">
+              <div className="rounded-3xl border border-[#f7e2de] bg-white p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#d13b2f]">Step 1</p>
                 <h3 className="mt-3 text-xl font-semibold text-[#17120f]">Tell us what you’re dreaming of</h3>
                 <p className="mt-2 text-sm leading-7 text-[#655b4f]">A simple enquiry form captures the travel type, destination interest, style, budget, and dates.</p>
               </div>
-              <div className="rounded-[1.5rem] border border-[#f7e2de] bg-white p-6">
+              <div className="rounded-3xl border border-[#f7e2de] bg-white p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#d13b2f]">Step 2</p>
                 <h3 className="mt-3 text-xl font-semibold text-[#17120f]">We craft the first recommendation</h3>
                 <p className="mt-2 text-sm leading-7 text-[#655b4f]">A specialist prepares a custom itinerary based on your preferences and affordability, not a fixed package.</p>
               </div>
-              <div className="rounded-[1.5rem] border border-[#f7e2de] bg-white p-6">
+              <div className="rounded-3xl border border-[#f7e2de] bg-white p-6">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#d13b2f]">Step 3</p>
                 <h3 className="mt-3 text-xl font-semibold text-[#17120f]">Refine it together</h3>
                 <p className="mt-2 text-sm leading-7 text-[#655b4f]">You review the plan and we adjust it — so the holiday is personalized, practical, and feels like your own.</p>
@@ -310,6 +315,9 @@ export default function Home() {
         </div>
       </section>
 
+      <FaqSection />
+      <InstagramSection />
+
       <section id="vision" className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
         <motion.div
           initial="hidden"
@@ -317,7 +325,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.6 }}
           variants={sectionMotion}
-          className="rounded-[2rem] border border-[#f0d6d1] bg-white p-6 shadow-[0_24px_80px_rgba(20,15,10,0.06)] sm:p-8 lg:p-10"
+          className="rounded-4xl border border-[#f0d6d1] bg-white p-6 shadow-[0_24px_80px_rgba(20,15,10,0.06)] sm:p-8 lg:p-10"
         >
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
             <div>
@@ -333,7 +341,7 @@ export default function Home() {
                 </Button>
               </div>
             </div>
-            <div className="rounded-[1.5rem] border border-[#f0d6d1] bg-[#fff8f5] p-6">
+            <div className="rounded-3xl border border-[#f0d6d1] bg-[#fff8f5] p-6">
               <p className="text-sm uppercase tracking-[0.3em] text-[#d13b2f]">Contact</p>
               <div className="mt-4 space-y-3 text-sm text-[#5d4944]">
                 <a href={`tel:${siteContent.phone}`} className="flex items-center gap-2 hover:text-[#d13b2f]">

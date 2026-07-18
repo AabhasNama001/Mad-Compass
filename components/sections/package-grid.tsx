@@ -30,9 +30,9 @@ export function PackageGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: index * 0.08, duration: 0.35 }}
-            className="overflow-hidden rounded-[2rem] border border-[#e9dcca] bg-[#fffaf4] shadow-[0_24px_80px_rgba(23,16,10,0.08)]"
+            className="overflow-hidden rounded-4xl border border-[#e9dcca] bg-[#fffaf4] shadow-[0_24px_80px_rgba(23,16,10,0.08)]"
           >
-            <div className="h-48 w-full bg-gradient-to-br from-[#1f1a17] to-[#5f4330]" />
+            <div className="h-48 w-full bg-linear-to-br from-[#1f1a17] to-[#5f4330]" />
             <div className="p-6">
               <div className="flex items-center justify-between gap-3">
                 <span className="rounded-full bg-[#f1e0cc] px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-[#8b4d24]">

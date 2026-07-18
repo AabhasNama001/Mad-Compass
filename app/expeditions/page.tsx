@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { Reveal } from "@/components/sections/reveal";
+
 import { Button } from "@/components/ui/button";
 import { EnquiryForm } from "@/components/sections/enquiry-form";
 import { PageHero } from "@/components/sections/page-hero";
 import { PhotoShowcaseCard } from "@/components/sections/photo-showcase-card";
+import { TestimonialCard } from "@/components/sections/testimonial-card";
+import { testimonials } from "@/data/testimonials";
 
 const highlights = [
   "High-focus adventure journeys for trekking, wildlife, remote landscapes, and specialist-led travel",
@@ -37,7 +41,7 @@ export default function ExpeditionsPage() {
         imageAlt="An expedition-led travel experience in the Himalayas"
       />
 
-      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
+      <Reveal className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">What we plan</p>
@@ -45,7 +49,7 @@ export default function ExpeditionsPage() {
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[#655b4f]">
               We blend comfort, safety, and destination expertise so the experience feels ambitious without becoming overwhelming.
             </p>
-            <div className="mt-8 space-y-3 rounded-[2rem] border border-[#efe2dc] bg-[#fffdfc] p-6">
+            <div className="mt-8 space-y-3 rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-6">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3 text-sm leading-7 text-[#5d4944]">
                   <span className="mt-1 size-2 rounded-full bg-[#c20b0b]" />
@@ -66,15 +70,21 @@ export default function ExpeditionsPage() {
           </div>
           <EnquiryForm />
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
+      <Reveal className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
         <div className="grid gap-6 lg:grid-cols-3">
           {journeys.map((journey) => (
             <PhotoShowcaseCard key={journey.title} {...journey} />
           ))}
         </div>
-      </section>
+      </Reveal>
+
+      <Reveal className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
+        <div className="max-w-3xl rounded-4xl border border-[#efe2dc] bg-white p-8 shadow-[0_24px_80px_rgba(17,17,17,0.05)]">
+          <TestimonialCard name={testimonials[1].name} location={testimonials[1].location} quote={testimonials[1].quote} trip={testimonials[1].trip} />
+        </div>
+      </Reveal>
     </main>
   );
 }
