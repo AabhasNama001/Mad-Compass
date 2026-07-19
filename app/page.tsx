@@ -8,12 +8,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { EnquiryForm } from "@/components/sections/enquiry-form";
 import { FaqSection } from "@/components/sections/faq-section";
-import { InstagramSection } from "@/components/sections/instagram-section";
 import { PhotoShowcaseCard } from "@/components/sections/photo-showcase-card";
-import { TestimonialCard } from "@/components/sections/testimonial-card";
+import { TestimonialSection } from "@/components/sections/testimonial-section";
 import { TrustStats } from "@/components/sections/trust-stats";
 import { siteContent } from "@/data/content";
-import { testimonials } from "@/data/testimonials";
 
 const pillars = [
   {
@@ -99,7 +97,7 @@ export default function Home() {
   return (
     <main className="flex-1 bg-[#fffdfc]">
       <section className="relative overflow-hidden border-b border-[#efe2dc] bg-white">
-        <div className="relative mx-auto max-w-7xl px-6 py-24 sm:px-8 lg:px-12 lg:py-28">
+        <div className="relative mx-auto max-w-7xl px-6 py-8 sm:px-8 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.25fr_0.9fr] lg:items-center">
             <motion.div
               initial="hidden"
@@ -150,7 +148,7 @@ export default function Home() {
               variants={sectionMotion}
               className="relative overflow-hidden rounded-[2.5rem] border border-[#efe2dc] bg-white p-8 shadow-[0_40px_120px_rgba(19,14,10,0.08)] sm:p-10"
             >
-              <div className="relative rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-8 sm:p-10">
+              <div className="relative rounded-4xl border border-[#efe2dc] bg-[#fffdfc] p-4 sm:p-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#c20b0b]">
                   Featured focus
                 </p>
@@ -397,22 +395,9 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {testimonials.slice(0, 3).map((item) => (
-            <TestimonialCard
-              key={item.name}
-              name={item.name}
-              location={item.location}
-              quote={item.quote}
-              trip={item.trip}
-            />
-          ))}
-        </div>
-      </section>
+      <TestimonialSection />
 
       <FaqSection />
-      <InstagramSection />
 
       <section
         id="vision"

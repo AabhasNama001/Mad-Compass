@@ -31,7 +31,7 @@ export function InstagramSection() {
             </h2>
           </div>
           <Link
-            href="https://instagram.com"
+            href="https://www.instagram.com/mad.compass/"
             target="_blank"
             rel="noreferrer"
             className="text-sm font-semibold text-[#f7b29d] hover:text-white"

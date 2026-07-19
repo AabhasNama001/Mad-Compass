@@ -34,7 +34,6 @@ export function TrustStats() {
               <p className="mt-2 text-sm uppercase tracking-[0.24em] text-[#c20b0b]">
                 {stat.label}
               </p>
-              <p className="mt-2 text-xs text-[#7d675f]">{stat.note}</p>
             </div>
           ))}
         </div>

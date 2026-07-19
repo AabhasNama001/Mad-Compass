@@ -12,45 +12,45 @@ import { TestimonialCard } from "@/components/sections/testimonial-card";
 import { testimonials } from "@/data/testimonials";
 
 const highlights = [
-  "High-focus adventure journeys for trekking, wildlife, remote landscapes, and specialist-led travel",
-  "Comfort, safety, and thoughtful pacing are built into the experience from the first conversation",
-  "A specialist helps shape each expedition around your ability, timing, and the kind of challenge you want",
+  "Iconic Nepal trekking routes including EBC, Everest Peaking, and Annapurna Circuit",
+  "Specialist-led support with experienced local guides, permits, and acclimatisation planning built in",
+  "Pacing and difficulty tailored to your fitness level and goals — no fixed group schedules",
 ];
 
 const journeys = [
   {
-    title: "Ladakh high-altitude passage",
-    subtitle: "Passes, monasteries, and dramatic Himalayan light",
+    title: "Everest Base Camp",
+    subtitle: "Standing at 5,364m — where every step earns the view",
     description:
-      "A carefully paced expedition for travellers who want landscape and meaning.",
-    badge: "Trekking",
-    image: "/images/ladakh.jpg",
+      "A classic 12–14 day EBC trek planned around your fitness and pace. Permits, accommodation, guides, and acclimatisation stops all handled.",
+    badge: "TREKKING",
+    image: "/images/everest.jpg",
     href: "/contact",
   },
   {
-    title: "Wildlife-led forest circuit",
-    subtitle: "Remote stays, expert guiding, and intimate sightings",
+    title: "Everest Peaking",
+    subtitle: "For those ready to go beyond base camp",
     description:
-      "Ideal for guests who want a deeper connection with nature and local ecosystems.",
-    badge: "Wildlife",
-    image: "/images/wildlife.jpg",
+      "Specialist-planned summit attempts with experienced climbing support and safety-first logistics from Kathmandu to the peak.",
+    badge: "SUMMIT",
+    image: "/images/everest-peak.jpg",
     href: "/contact",
   },
   {
-    title: "Polar and remote escapes",
-    subtitle: "Specialist-led journeys for rare and unforgettable landscapes",
+    title: "Annapurna Circuit",
+    subtitle: "Nepal's most diverse trek — valleys, passes, and ancient villages",
     description:
-      "Designed for travellers seeking a once-in-a-lifetime expedition with precision planning.",
-    badge: "Specialist",
-    image: "/images/polar.jpg",
+      "A 10–16 day circuit through dramatic landscape variety. Tailored entry and exit points based on your available time and preferred intensity.",
+    badge: "CIRCUIT",
+    image: "/images/annapurna.jpg",
     href: "/contact",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Expeditions | Mad Compass",
+  title: "Expeditions — Nepal Trekking & Peaks | Mad Compass",
   description:
-    "Explore specialist-led expeditions with expert planning, comfort-focused logistics, and high-impact adventures.",
+    "Plan your Nepal expedition with Mad Compass — Everest Base Camp, Everest Peaking, Annapurna Circuit and more, specialist-led and fully tailored to your pace.",
 };
 
 export default function ExpeditionsPage() {
@@ -58,8 +58,8 @@ export default function ExpeditionsPage() {
     <main className="flex-1 bg-[#fffdfc]">
       <PageHero
         eyebrow="Expeditions"
-        title="Adventure travel that is bold, considered, and expertly guided."
-        description="For travellers chasing something deeper than a standard itinerary, we plan expeditions with care: the right route, the right pace, and the right support for every step."
+        title="Nepal's greatest trails, planned with precision and care."
+        description="From Everest Base Camp to the Annapurna Circuit, we plan Nepal expeditions with specialist-led support, the right pacing, and logistics handled end to end — so you can focus on the journey."
         primaryCta={{ label: "Start planning", href: "/contact" }}
         secondaryCta={{ label: "Talk to a specialist", href: "/contact" }}
         image="/images/expeditions.jpg"
@@ -119,6 +119,13 @@ export default function ExpeditionsPage() {
             <PhotoShowcaseCard key={journey.title} {...journey} />
           ))}
         </div>
+        <p className="mt-6 text-sm leading-7 text-[#786d64]">
+          More Expedition routes coming soon.{' '}
+          <Link href="/contact" className="font-medium text-[#c20b0b] transition hover:text-[#a70a0a]">
+            Enquire
+          </Link>{' '}
+          directly and a specialist will share what's currently available.
+        </p>
       </Reveal>
 
       <Reveal className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">

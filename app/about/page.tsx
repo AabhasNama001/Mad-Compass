@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { FaqSection } from "@/components/sections/faq-section";
 import { InstagramSection } from "@/components/sections/instagram-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { Reveal } from "@/components/sections/reveal";
@@ -134,7 +133,6 @@ export default function AboutPage() {
         </div>
       </Reveal>
 
-      <FaqSection />
       <InstagramSection />
 
       <Reveal className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
