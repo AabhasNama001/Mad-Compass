@@ -18,15 +18,15 @@ const values = [
 
 const team = [
   {
-    name: "Riya Sen",
-    role: "Destination Specialist",
+    name: "Tamraparna Kundu",
+    role: "Founder & Travel Consultant",
     bio: "Brings a calm, detail-led approach to journeys that feel relaxed, refined, and genuinely personal.",
   },
-  {
-    name: "Arin Das",
-    role: "Holiday Consultant",
-    bio: "Known for translating ideas into itineraries that balance comfort, depth, and memorable local experiences with ease.",
-  },
+  // {
+  //   name: "Arin Das",
+  //   role: "Holiday Consultant",
+  //   bio: "Known for translating ideas into itineraries that balance comfort, depth, and memorable local experiences with ease.",
+  // },
 ];
 
 export const metadata: Metadata = {
