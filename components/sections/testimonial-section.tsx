@@ -9,8 +9,30 @@ import { TestimonialCard } from "./testimonial-card";
 export function TestimonialSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
-  // no synchronous state effects required
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const touch = event.touches[0];
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (!touchStartRef.current) return;
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - touchStartRef.current.x;
+    const deltaY = touch.clientY - touchStartRef.current.y;
+    const absX = Math.abs(deltaX);
+    const absY = Math.abs(deltaY);
+
+    if (absX > absY && absX > 12) {
+      event.preventDefault();
+    }
+  };
+
+  const handleTouchEnd = () => {
+    touchStartRef.current = null;
+  };
 
   return (
     <section className="bg-[#fffdfc] px-6 py-20 sm:px-8 lg:px-12">
@@ -49,6 +71,9 @@ export function TestimonialSection() {
           <div className="overflow-hidden rounded-[1.75rem]">
             <div
               ref={scrollRef}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
               onScroll={() => {
                 if (!scrollRef.current) return;
                 const container = scrollRef.current;
@@ -67,8 +92,8 @@ export function TestimonialSection() {
                 }
                 setActiveIndex(closestIndex);
               }}
-              className="flex gap-4 overflow-x-auto touch-pan-x snap-x snap-mandatory px-3 py-4"
-              style={{ WebkitOverflowScrolling: "touch" }}
+              className="flex gap-4 overflow-x-auto overflow-y-visible touch-pan-y snap-x snap-mandatory px-3 py-4"
+              style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
             >
               {testimonials.map((item) => (
                 <div key={item.name} className="shrink-0 snap-center w-[86%] sm:w-[78%] px-1">
