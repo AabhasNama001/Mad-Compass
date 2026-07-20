@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 import { testimonials } from "@/data/testimonials";
@@ -8,14 +8,9 @@ import { TestimonialCard } from "./testimonial-card";
 
 export function TestimonialSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const goToNext = () => {
-    setActiveIndex((current) => (current === testimonials.length - 1 ? 0 : current + 1));
-  };
-
-  const goToPrev = () => {
-    setActiveIndex((current) => (current === 0 ? testimonials.length - 1 : current - 1));
-  };
+  // no synchronous state effects required
 
   return (
     <section className="bg-[#fffdfc] px-6 py-20 sm:px-8 lg:px-12">
@@ -27,6 +22,7 @@ export function TestimonialSection() {
           </h2>
         </div>
 
+        {/* Desktop: 3-up grid with equal heights */}
         <div className="mt-10 hidden gap-6 lg:grid lg:grid-cols-3 lg:items-stretch">
           {testimonials.map((item, index) => (
             <motion.div
@@ -42,40 +38,50 @@ export function TestimonialSection() {
                 location={item.location}
                 quote={item.quote}
                 trip={item.trip}
-                className="h-full flex flex-col justify-between min-h-80"
+                className="h-full flex flex-col justify-between min-h-[320px]"
               />
             </motion.div>
           ))}
         </div>
 
+        {/* Mobile/Tablet: smooth native scroll-snap carousel */}
         <div className="mt-10 lg:hidden">
           <div className="overflow-hidden rounded-[1.75rem]">
-            <motion.div
-              className="flex touch-pan-x"
-              animate={{ x: `-${activeIndex * 100}%` }}
-              transition={{ type: "spring", stiffness: 260, damping: 24 }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              onDragEnd={(_, info) => {
-                if (info.offset.x < -80) {
-                  goToNext();
-                } else if (info.offset.x > 80) {
-                  goToPrev();
+            <div
+              ref={scrollRef}
+              onScroll={() => {
+                if (!scrollRef.current) return;
+                const container = scrollRef.current;
+                const children = Array.from(container.children) as HTMLElement[];
+                if (children.length === 0) return;
+                const scrollLeft = container.scrollLeft;
+                let closestIndex = 0;
+                let closestDiff = Infinity;
+                for (let i = 0; i < children.length; i++) {
+                  const child = children[i];
+                  const diff = Math.abs(child.offsetLeft - scrollLeft);
+                  if (diff < closestDiff) {
+                    closestDiff = diff;
+                    closestIndex = i;
+                  }
                 }
+                setActiveIndex(closestIndex);
               }}
+              className="flex gap-4 overflow-x-auto touch-pan-x snap-x snap-mandatory px-3 py-4"
+              style={{ WebkitOverflowScrolling: "touch" }}
             >
               {testimonials.map((item) => (
-                <div key={item.name} className="w-full shrink-0 px-1">
+                <div key={item.name} className="shrink-0 snap-center w-[86%] sm:w-[78%] px-1">
                   <TestimonialCard
                     name={item.name}
                     location={item.location}
                     quote={item.quote}
                     trip={item.trip}
-                    className="min-h-80 flex flex-col justify-between"
+                    className="min-h-[320px] flex flex-col justify-between"
                   />
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
           <div className="mt-4 flex items-center justify-center gap-2">
@@ -84,7 +90,16 @@ export function TestimonialSection() {
                 key={item.name}
                 type="button"
                 aria-label={`Show testimonial ${index + 1}`}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => {
+                  if (!scrollRef.current) return;
+                  const container = scrollRef.current;
+                  const children = Array.from(container.children) as HTMLElement[];
+                  const target = children[index];
+                  if (target) {
+                    container.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+                    setActiveIndex(index);
+                  }
+                }}
                 className={`h-2.5 w-2.5 rounded-full transition ${
                   index === activeIndex ? "bg-[#c20b0b]" : "bg-[#e7dcd6]"
                 }`}

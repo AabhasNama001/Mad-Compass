@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { InstagramSection } from "@/components/sections/instagram-section";
 import { PageHero } from "@/components/sections/page-hero";
 import { Reveal } from "@/components/sections/reveal";
-import { TestimonialCard } from "@/components/sections/testimonial-card";
+import { TestimonialSection } from "@/components/sections/testimonial-section";
 import { siteContent } from "@/data/content";
-import { testimonials } from "@/data/testimonials";
+// testimonials data is used inside the TestimonialSection component
 
 const values = [
   "We begin by listening closely and shaping the trip around your travel style, budget, and rhythm.",
@@ -135,19 +135,7 @@ export default function AboutPage() {
 
       <InstagramSection />
 
-      <Reveal className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
-        <div className="grid gap-6 lg:grid-cols-3">
-          {testimonials.slice(0, 3).map((item) => (
-            <TestimonialCard
-              key={item.name}
-              name={item.name}
-              location={item.location}
-              quote={item.quote}
-              trip={item.trip}
-            />
-          ))}
-        </div>
-      </Reveal>
+      <TestimonialSection />
 
       <Reveal className="mx-auto max-w-7xl px-6 pb-24 sm:px-8 lg:px-12">
         <div className="rounded-4xl border border-[#efe2dc] bg-[#fff8f5] p-8 text-center sm:p-10">
