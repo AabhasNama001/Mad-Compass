@@ -16,21 +16,33 @@ export function TestimonialSection() {
     touchStartRef.current = { x: touch.clientX, y: touch.clientY };
   };
 
-  const handleTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (!touchStartRef.current) return;
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (!touchStartRef.current || !scrollRef.current) {
+      touchStartRef.current = null;
+      return;
+    }
 
-    const touch = event.touches[0];
+    const touch = event.changedTouches[0];
     const deltaX = touch.clientX - touchStartRef.current.x;
     const deltaY = touch.clientY - touchStartRef.current.y;
     const absX = Math.abs(deltaX);
     const absY = Math.abs(deltaY);
 
-    if (absX > absY && absX > 12) {
-      event.preventDefault();
+    if (absX > absY && absX > 30) {
+      const container = scrollRef.current;
+      const direction = deltaX < 0 ? 1 : -1;
+      const nextIndex = Math.min(
+        Math.max(activeIndex + direction, 0),
+        testimonials.length - 1,
+      );
+      const children = Array.from(container.children) as HTMLElement[];
+      const target = children[nextIndex];
+      if (target) {
+        container.scrollTo({ left: target.offsetLeft, behavior: "smooth" });
+        setActiveIndex(nextIndex);
+      }
     }
-  };
 
-  const handleTouchEnd = () => {
     touchStartRef.current = null;
   };
 
@@ -60,7 +72,7 @@ export function TestimonialSection() {
                 location={item.location}
                 quote={item.quote}
                 trip={item.trip}
-                className="h-full flex flex-col justify-between min-h-[320px]"
+                className="h-full flex flex-col justify-between min-h-80"
               />
             </motion.div>
           ))}
@@ -72,7 +84,6 @@ export function TestimonialSection() {
             <div
               ref={scrollRef}
               onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
               onScroll={() => {
                 if (!scrollRef.current) return;
@@ -92,8 +103,8 @@ export function TestimonialSection() {
                 }
                 setActiveIndex(closestIndex);
               }}
-              className="flex gap-4 overflow-x-auto overflow-y-visible touch-pan-y snap-x snap-mandatory px-3 py-4"
-              style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
+              className="flex gap-4 overflow-x-auto overflow-y-visible touch-pan-x snap-x snap-mandatory px-3 py-4"
+              style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-x pan-y" }}
             >
               {testimonials.map((item) => (
                 <div key={item.name} className="shrink-0 snap-center w-[86%] sm:w-[78%] px-1">
@@ -102,7 +113,7 @@ export function TestimonialSection() {
                     location={item.location}
                     quote={item.quote}
                     trip={item.trip}
-                    className="min-h-[320px] flex flex-col justify-between"
+                    className="min-h-80 flex flex-col justify-between"
                   />
                 </div>
               ))}

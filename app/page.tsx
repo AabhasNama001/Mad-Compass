@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Compass, MessageCircle, Phone } from "lucide-react";
 import { motion } from "framer-motion";
@@ -12,21 +11,6 @@ import { PhotoShowcaseCard } from "@/components/sections/photo-showcase-card";
 import { TestimonialSection } from "@/components/sections/testimonial-section";
 import { TrustStats } from "@/components/sections/trust-stats";
 import { siteContent } from "@/data/content";
-
-const pillars = [
-  {
-    title: "Personal first",
-    text: "Every holiday begins with listening. We shape the trip around your preferences, pace, and budget rather than forcing a template.",
-  },
-  {
-    title: "Human expertise",
-    text: "Every enquiry is handled by a holiday expert or destination specialist, so the planning feels thoughtful from the first step.",
-  },
-  {
-    title: "Tailored, not templated",
-    text: "From a slow domestic escape to a once-in-a-lifetime expedition, the experience is built for you and refined with you.",
-  },
-];
 
 const sections = [
   { id: "discover", label: "Discover" },

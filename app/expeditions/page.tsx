@@ -124,7 +124,7 @@ export default function ExpeditionsPage() {
           <Link href="/contact" className="font-medium text-[#c20b0b] transition hover:text-[#a70a0a]">
             Enquire
           </Link>{' '}
-          directly and a specialist will share what's currently available.
+          directly and a specialist will share what&apos;s currently available.
         </p>
       </Reveal>
 
