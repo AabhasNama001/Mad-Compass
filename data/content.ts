@@ -24,7 +24,8 @@ export const siteContent: SiteContent = {
   companyName: "Mad Compass Travel & Tours",
   tagline: "Thoughtful travel, carefully planned",
   heroEyebrow: "Bespoke holidays, guided personally",
-  heroHeadline: "Thoughtful holidays shaped around your pace, your people, and the stories you want to bring home.",
+  heroHeadline:
+    "Thoughtful holidays shaped around your pace, your people, and the stories you want to bring home.",
   heroSubtext:
     "We plan with intention rather than templates — pairing local insight, calm logistics, and personal guidance so every journey feels considered from the first conversation.",
   address: "Kolkata, India",
@@ -34,8 +35,8 @@ export const siteContent: SiteContent = {
   email: "hello@madcompass.com",
   hours: "Mon–Sat · 10:00 AM – 7:00 PM",
   socials: [
-    { label: "Instagram", href: "https://instagram.com" },
+    { label: "Instagram", href: "https://www.instagram.com/mad.compass/" },
     { label: "WhatsApp", href: "https://wa.me/919711193458" },
-    { label: "Facebook", href: "https://facebook.com" },
+    { label: "Facebook", href: "https://www.facebook.com/madcompass.ccu/" },
   ],
 };

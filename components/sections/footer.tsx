@@ -43,6 +43,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/terms" className="hover:text-white">
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
