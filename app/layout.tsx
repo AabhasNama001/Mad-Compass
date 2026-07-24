@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   title: "Mad Compass | Tailored Holidays, Curated With Care",
   description: "Mad Compass creates personalised domestic and overseas holidays with a warm, specialist-led planning experience.",
   metadataBase: new URL("https://madcompass.com"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/favicon-180x180.png", type: "image/png", sizes: "180x180" }],
+  },
   alternates: {
     canonical: "/",
   },
