@@ -379,14 +379,13 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <TestimonialSection />
+      <section id="vision">
+        <TestimonialSection />
+      </section>
 
       <FaqSection />
 
-      <section
-        id="vision"
-        className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12"
-      >
+      <section className="mx-auto max-w-7xl px-6 pb-20 sm:px-8 lg:px-12">
         <motion.div
           initial="hidden"
           whileInView="visible"
