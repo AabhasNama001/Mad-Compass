@@ -19,14 +19,19 @@ const values = [
 const team = [
   {
     name: "Tamraparna Kundu",
-    role: "Founder & Travel Consultant",
-    bio: "Brings a calm, detail-led approach to journeys that feel relaxed, refined, and genuinely personal.",
+    role: "Founder & CEO",
+    bio: "Luxury & Off beat Travel Consultant. Brings a calm, practical oriented approach to journeys that ultimately feel relaxed, refined and truly personal.",
   },
-  // {
-  //   name: "Arin Das",
-  //   role: "Holiday Consultant",
-  //   bio: "Known for translating ideas into itineraries that balance comfort, depth, and memorable local experiences with ease.",
-  // },
+  {
+    name: "Santa Kundu",
+    role: "Co-Founder",
+    bio: "Hitting 60 and still climbing! Our core motivator behind perfecting above and beyond 6K Expeditons. Merging traditional/indigenous culture and travel together with her expertise and experience in both.",
+  },
+  {
+    name: "Mridul Rawat",
+    role: "COO",
+    bio: "Bringing Calm to the chaos behind the scenes. Engineer with a nomad heart. He ties all loose ends with his attention to detail, discipline and dimples!",
+  },
 ];
 
 export const metadata: Metadata = {
