@@ -32,7 +32,7 @@ export const siteContent: SiteContent = {
   gst: "GST: 19AAXXX0000X1ZX",
   phone: "+91 9711193458",
   whatsapp: "https://wa.me/919711193458",
-  email: "hello@madcompass.com",
+  email: "tamraparna.k@gmail.com",
   hours: "Mon–Sat · 10:00 AM – 7:00 PM",
   socials: [
     { label: "Instagram", href: "https://www.instagram.com/mad.compass/" },

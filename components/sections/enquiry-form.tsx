@@ -32,7 +32,7 @@ const initialForm: FormState = {
   notes: "",
 };
 
-const travelTypes = ["Domestic", "Overseas", "Expedition"];
+const travelTypes = ["Domestic", "Overseas", "Expedition", "Not sure yet"];
 const styleTags = [
   "Relaxation",
   "Adventure",
@@ -114,42 +114,43 @@ export function EnquiryForm() {
   };
 
   return (
-    <div className="rounded-4xl border border-[#f0d6d1] bg-white p-6 shadow-[0_24px_80px_rgba(20,15,10,0.08)] sm:p-8">
-      <div className="flex items-center justify-between gap-4">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-[#d13b2f]">
-            Start your journey
-          </p>
-          <h3 className="mt-2 text-2xl font-semibold text-[#17120f]">
-            Tell us what kind of holiday you are craving.
-          </h3>
-        </div>
-        <div className="rounded-full border border-[#f1d8d2] px-3 py-1 text-sm font-medium text-[#7a5048]">
-          Step {step + 1} of 6
-        </div>
-      </div>
-
-      <div className="mt-6 h-2 overflow-hidden rounded-full bg-[#f7e8e5]">
-        <div
-          className="h-full rounded-full bg-[#d13b2f] transition-all"
-          style={{ width: `${progress}%` }}
-        />
-      </div>
-
-      {submitError ? (
-        <div className="mt-6 rounded-2xl border border-[#f0d6d1] bg-[#fff4f1] p-4 text-sm text-[#8a4338]">
-          {submitError}
-        </div>
-      ) : null}
-
+    <div className="rounded-4xl border border-[#f0d6d1] bg-white p-5 shadow-[0_24px_80px_rgba(20,15,10,0.08)] sm:p-8">
       {!submitted ? (
+        <>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div className="min-w-0">
+              <p className="text-xs uppercase tracking-[0.28em] text-[#d13b2f] sm:text-sm">
+                Start your journey
+              </p>
+              <h3 className="mt-2 text-xl font-semibold text-[#17120f] sm:text-2xl">
+                Tell us what kind of holiday you are craving.
+              </h3>
+            </div>
+            <div className="self-start rounded-full border border-[#f1d8d2] px-3 py-1 text-xs font-medium text-[#7a5048] sm:text-sm">
+              Step {step + 1} of 6
+            </div>
+          </div>
+
+          <div className="mt-6 h-2 overflow-hidden rounded-full bg-[#f7e8e5]">
+            <div
+              className="h-full rounded-full bg-[#d13b2f] transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+
+          {submitError ? (
+            <div className="mt-6 rounded-2xl border border-[#f0d6d1] bg-[#fff4f1] p-4 text-sm text-[#8a4338]">
+              {submitError}
+            </div>
+          ) : null}
+
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {step === 0 ? (
             <div>
               <label className="mb-2 block text-sm font-semibold text-[#4b3b37]">
                 What kind of travel are you considering?
               </label>
-              <div className="grid gap-3 sm:grid-cols-3">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                 {travelTypes.map((option) => (
                   <button
                     key={option}
@@ -179,7 +180,7 @@ export function EnquiryForm() {
                 onChange={(event) =>
                   updateField("destination", event.target.value)
                 }
-                className="w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm outline-none ring-0"
+                className="min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm outline-none ring-0"
                 placeholder="e.g. Japan, Bhutan, Kerala, or I am still exploring"
               />
             </div>
@@ -196,7 +197,7 @@ export function EnquiryForm() {
                     key={tag}
                     type="button"
                     onClick={() => updateField("style", tag)}
-                    className={`rounded-full border px-3 py-2 text-sm transition ${
+                    className={`min-h-11 rounded-full border px-3 py-2 text-sm transition ${
                       form.style === tag
                         ? "border-[#d13b2f] bg-[#fff2ee] text-[#d13b2f]"
                         : "border-[#f0d6d1] text-[#5d4944]"
@@ -257,7 +258,7 @@ export function EnquiryForm() {
               <textarea
                 value={form.notes}
                 onChange={(event) => updateField("notes", event.target.value)}
-                className="mt-4 min-h-24 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm outline-none"
+                className="mt-4 min-h-24 min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm outline-none"
                 placeholder="Share rough dates, trip length, or anything you are dreaming of."
               />
             </div>
@@ -273,7 +274,7 @@ export function EnquiryForm() {
                   required
                   value={form.name}
                   onChange={(event) => updateField("name", event.target.value)}
-                  className="w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
+                  className="min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
                   placeholder="e.g. John Doe"
                 />
               </div>
@@ -285,7 +286,7 @@ export function EnquiryForm() {
                   required
                   value={form.phone}
                   onChange={(event) => updateField("phone", event.target.value)}
-                  className="w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
+                  className="min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
                   placeholder="+91 9999999999"
                 />
               </div>
@@ -298,7 +299,7 @@ export function EnquiryForm() {
                   type="email"
                   value={form.email}
                   onChange={(event) => updateField("email", event.target.value)}
-                  className="w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
+                  className="min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
                   placeholder="you@example.com"
                 />
               </div>
@@ -311,7 +312,7 @@ export function EnquiryForm() {
                   onChange={(event) =>
                     updateField("preferredContact", event.target.value)
                   }
-                  className="w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
+                  className="min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm"
                 >
                   <option value="WhatsApp">WhatsApp</option>
                   <option value="Phone">Phone</option>
@@ -327,13 +328,13 @@ export function EnquiryForm() {
                 ? "We will turn this into a thoughtful first recommendation."
                 : "Your answers help us shortlist the right travel style."}
             </div>
-            <div className="flex w-full flex-wrap gap-3 sm:w-auto">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               {step > 0 ? (
                 <Button
                   type="button"
                   variant="outline"
                   onClick={handleBack}
-                  className="w-full border-[#f0d6d1] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)] sm:w-auto"
+                  className="min-h-11 w-full border-[#f0d6d1] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)] sm:w-auto"
                 >
                   Back
                 </Button>
@@ -342,14 +343,14 @@ export function EnquiryForm() {
                 <Button
                   type="button"
                   onClick={handleNext}
-                  className="w-full bg-[#d13b2f] text-white shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] sm:w-auto"
+                  className="min-h-11 w-full bg-[#d13b2f] text-white shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] sm:w-auto"
                 >
                   Continue <ArrowRight className="size-4" />
                 </Button>
               ) : (
                 <Button
                   type="submit"
-                  className="w-full bg-[#d13b2f] text-white shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] sm:w-auto"
+                  className="min-h-11 w-full bg-[#d13b2f] text-white shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] sm:w-auto"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send enquiry"}
@@ -357,41 +358,37 @@ export function EnquiryForm() {
               )}
             </div>
           </div>
-        </form>
+          </form>
+        </>
       ) : (
-        <div className="mt-8 rounded-3xl border border-[#e8d8d4] bg-[#fffaf8] p-6 text-center">
-          <CheckCircle2 className="mx-auto size-10 text-[#d13b2f]" />
-          <h4 className="mt-4 text-2xl font-semibold text-[#17120f]">
-            Thank you — your enquiry is in.
-          </h4>
-          <p className="mt-3 text-sm leading-7 text-[#6b534d]">
-            We will be in touch soon with a tailored first recommendation and
-            next steps. If you prefer, you can also reach us directly on
-            WhatsApp at{" "}
-            <a
-              href={siteContent.whatsapp}
-              className="font-semibold text-[#d13b2f]"
-            >
-              {siteContent.phone}
-            </a>
-            .
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-            <Button
-              asChild
-              className="w-full bg-[#d13b2f] shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] sm:w-auto"
-            >
-              <a href={siteContent.whatsapp} target="_blank" rel="noreferrer">
-                <MessageCircle className="size-4" /> WhatsApp us
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="w-full border-[#f0d6d1] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)] sm:w-auto"
-            >
-              <a href={`mailto:${siteContent.email}`}>Email us</a>
-            </Button>
+        <div className="flex min-h-[420px] items-center justify-center rounded-3xl border border-[#e8d8d4] bg-[#fffaf8] p-5 text-center transition-opacity duration-300 sm:p-8">
+          <div className="w-full max-w-2xl">
+            <CheckCircle2 className="mx-auto size-12 text-[#d13b2f]" />
+            <h4 className="mt-4 text-2xl font-semibold text-[#17120f] sm:text-3xl">
+              Thank you — your enquiry is in.
+            </h4>
+            <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-[#6b534d] sm:text-base">
+              We will be in touch soon with a tailored first recommendation and
+              next steps. If you prefer, you can also reach us directly on
+              WhatsApp at +91 9711193458.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button
+                asChild
+                className="min-h-11 w-full bg-[#d13b2f] shadow-[0_16px_35px_rgba(194,11,11,0.22)] hover:bg-[#b92f24] hover:shadow-[0_20px_42px_rgba(194,11,11,0.3)] sm:w-auto"
+              >
+                <a href={siteContent.whatsapp} target="_blank" rel="noreferrer">
+                  <MessageCircle className="size-4" /> WhatsApp us
+                </a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="min-h-11 w-full border-[#f0d6d1] bg-white/95 text-[#17120f] shadow-[0_10px_24px_rgba(17,17,17,0.06)] hover:border-[#c20b0b] hover:text-[#c20b0b] hover:bg-[#fff7f4] hover:shadow-[0_14px_30px_rgba(17,17,17,0.08)] sm:w-auto"
+              >
+                <a href={`mailto:${siteContent.email}`}>Email us</a>
+              </Button>
+            </div>
           </div>
         </div>
       )}
