@@ -7,6 +7,7 @@
   "typescript.check.npmIsInstalled": false,
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.workspaceSymbolsExcludeLibraries": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "files.exclude": {
     "c:\\Users\\**\\node_modules": true,

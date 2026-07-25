@@ -19,10 +19,10 @@ export function InstagramSection() {
       transition={{ duration: 0.55 }}
       className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12"
     >
-      <div className="rounded-4xl border border-[#efe2dc] bg-[#111111] p-8 text-white shadow-[0_24px_80px_rgba(17,17,17,0.12)] sm:p-10">
+      <div className="rounded-4xl border border-white/20 bg-[linear-gradient(270deg,#c20b0b_0%,#a60a0a_100%)] p-8 text-white shadow-[0_24px_80px_rgba(194,11,11,0.24)] sm:p-10">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-[#f7b29d]">
+            <p className="text-sm uppercase tracking-[0.3em] text-[#ffe8e1]">
               Instagram
             </p>
             <h2 className="mt-3 text-3xl font-semibold sm:text-4xl">
@@ -34,7 +34,7 @@ export function InstagramSection() {
             href="https://www.instagram.com/mad.compass/"
             target="_blank"
             rel="noreferrer"
-            className="text-sm font-semibold text-[#f7b29d] hover:text-white"
+            className="text-sm font-semibold text-[#ffe8e1] transition hover:text-white"
           >
             Follow @madcompass
           </Link>

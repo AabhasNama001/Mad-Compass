@@ -258,7 +258,7 @@ export function EnquiryForm() {
               <textarea
                 value={form.notes}
                 onChange={(event) => updateField("notes", event.target.value)}
-                className="mt-4 min-h-24 min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm outline-none"
+                className="mt-4 min-h-11 w-full rounded-2xl border border-[#f0d6d1] bg-[#fffdfa] px-4 py-3 text-sm outline-none"
                 placeholder="Share rough dates, trip length, or anything you are dreaming of."
               />
             </div>
@@ -361,7 +361,7 @@ export function EnquiryForm() {
           </form>
         </>
       ) : (
-        <div className="flex min-h-[420px] items-center justify-center rounded-3xl border border-[#e8d8d4] bg-[#fffaf8] p-5 text-center transition-opacity duration-300 sm:p-8">
+        <div className="flex min-h-105 items-center justify-center rounded-3xl border border-[#e8d8d4] bg-[#fffaf8] p-5 text-center transition-opacity duration-300 sm:p-8">
           <div className="w-full max-w-2xl">
             <CheckCircle2 className="mx-auto size-12 text-[#d13b2f]" />
             <h4 className="mt-4 text-2xl font-semibold text-[#17120f] sm:text-3xl">

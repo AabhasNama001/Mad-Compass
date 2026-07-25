@@ -29,13 +29,13 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:px-8 lg:px-12">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <div className="relative h-16 w-auto shrink-0">
+          <div className="relative h-14 w-30 shrink-0 sm:h-16 sm:w-35 lg:h-18 lg:w-44">
             <Image
               src="/images/mad-compass-logo-transparent.png"
               alt="Mad Compass"
               width={200}
               height={100}
-              className="h-16 w-auto object-contain"
+              className="h-full w-full object-contain"
               priority
               loading="eager"
             />
