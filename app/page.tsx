@@ -437,10 +437,10 @@ export default function Home() {
                   <Phone className="size-4" /> {siteContent.phone}
                 </a>
                 <a
-                  href={`mailto:${siteContent.email}`}
+                  href="mailto:hello@madcompass.com"
                   className="flex items-center gap-2 hover:text-[#d13b2f]"
                 >
-                  <MessageCircle className="size-4" /> {siteContent.email}
+                  <MessageCircle className="size-4" /> hello@madcompass.com
                 </a>
               </div>
             </div>

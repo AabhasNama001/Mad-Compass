@@ -11,17 +11,17 @@ export default function DesignTokensPage() {
         </p>
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
-          <div className="rounded-[2rem] border border-[#eadfce] bg-white p-6">
+          <div className="rounded-4xl border border-[#eadfce] bg-white p-6">
             <div className="h-16 rounded-[1.25rem] bg-[#0f0c0b]" />
             <p className="mt-4 font-semibold text-[#1f1a17]">Deep neutral</p>
             <p className="text-sm text-[#655b4f]">Near-black / charcoal foundation.</p>
           </div>
-          <div className="rounded-[2rem] border border-[#eadfce] bg-white p-6">
+          <div className="rounded-4xl border border-[#eadfce] bg-white p-6">
             <div className="h-16 rounded-[1.25rem] bg-[#b86b3d]" />
             <p className="mt-4 font-semibold text-[#1f1a17]">Warm accent</p>
             <p className="text-sm text-[#655b4f]">Rust-red / copper CTA tone.</p>
           </div>
-          <div className="rounded-[2rem] border border-[#eadfce] bg-white p-6">
+          <div className="rounded-4xl border border-[#eadfce] bg-white p-6">
             <div className="h-16 rounded-[1.25rem] bg-[#f8efe7]" />
             <p className="mt-4 font-semibold text-[#1f1a17]">Warm ivory</p>
             <p className="text-sm text-[#655b4f]">Soft text and surface tone.</p>
